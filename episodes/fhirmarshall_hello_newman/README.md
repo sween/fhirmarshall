@@ -25,7 +25,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/sween/fhirmarshall/raw/main/episodes/fhirmarshall_hello_newman/assets/newman.jpg" alt="Logo" width="300" height="300">
   </a>
 
   <h3 align="center">Hello Newman.</h3>
