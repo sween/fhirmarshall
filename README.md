@@ -8,7 +8,7 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, project_title, project_description
+*** sween, repo_name, twitter_handle, email, project_title, project_description
 -->
 
 
@@ -21,7 +21,9 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-<p align="center">[![LinkedIn][linkedin-shield]][linkedin-url]</p>
+<p align="center">
+[![LinkedIn][linkedin-shield]][linkedin-url]
+</p>
 
 
 
@@ -38,9 +40,9 @@
     "LET ME SHOW YOU SOMETHIN'!"
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name/issues">Argue</a>
+    <a href="https://github.com/sween/fhirmarshall_name/issues">Argue</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request SOMETHIN'</a>
+    <a href="https://github.com/sween/fhirmarshall_name/issues">Request SOMETHIN'</a>
   </p>
 </p>
 
@@ -89,15 +91,15 @@ Project Link: [https://github.com/sween/fhirmarshall](https://github.com/sween/f
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/sween/fhirmarshall.svg?style=for-the-badge
+[contributors-url]: https://github.com/sween/fhirmarshall/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/sween/fhirmarshall.svg?style=for-the-badge
+[forks-url]: https://github.com/sween/fhirmarshall/network/members
+[stars-shield]: https://img.shields.io/github/stars/sween/fhirmarshall.svg?style=for-the-badge
+[stars-url]: https://github.com/sween/fhirmarshall/stargazers
+[issues-shield]: https://img.shields.io/github/issues/sween/fhirmarshall.svg?style=for-the-badge
+[issues-url]: https://github.com/sween/fhirmarshall/issues
+[license-shield]: https://img.shields.io/github/license/sween/fhirmarshall.svg?style=for-the-badge
+[license-url]: https://github.com/sween/fhirmarshall/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ronsweeney
