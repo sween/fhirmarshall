@@ -51,7 +51,7 @@
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -76,7 +76,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
+### Features  
 
+* Prebaked Collection for use against `r4`. 
+* Lots of cool metrics and math to argue about.  
+* Helps dial in the performance of your API, and a possible integration layer in between. 
 
 ### Built With
 
@@ -119,8 +123,8 @@ If you just happen to have and endpoint out there and want to get use the collec
    ```sh
    newman run fhir_test_portal_postman.json  --env-var "api=1111" --env-var "apikey:4444"
    ```  
-   
-_For more examples, please refer to the [Documentation](https://example.com)_
+
+_If your endpoint is not secured, the apikey var will be ignored, but it is required._
 
 <!-- USAGE EXAMPLES -->
 ## Usage
