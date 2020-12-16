@@ -95,29 +95,39 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Head out and grab Newman in your shell.
 * npm
   ```sh
-  npm install npm@latest -g
+  npm install -g newman
   ```
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/sween/fhirmarshall.git
    ```
-2. Install NPM packages
+2. Park yourself in this episode
    ```sh
-   npm install
+   cd episodes/fhirmarhsall_hello_newman
    ```
 
+## Quick Start  
 
+If you just happen to have and endpoint out there and want to get use the collection in this repo, you can run this collection out of the box.
+
+   ```sh
+   newman run fhir_test_portal_postman.json  --env-var "api=1111" --env-var "apikey:4444"
+   ```  
+   
+_For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
