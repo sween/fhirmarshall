@@ -21,28 +21,32 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-<p align="center">
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-</p>
+
 
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/sween/fhirmarshall_hello_newman">
-    <img src="https://github.com/sween/fhirmarshall_hello_newman/raw/main/assets/fhir_marshall.png" alt="Logo">
+  <a href="https://github.com/sween/fhirmarshall">
+    <img src="https://github.com/sween/fhirmarshall/raw/main/assets/fhir_marshall.png" alt="Logo">
   </a>
 
-  <h3 align="center">FHIR Marshall</h3>
+  <h3 align="center">FHIR(`:tm:`) Marshall</h3>
 
   <p align="center">
     "LET ME SHOW YOU SOMETHIN'!"
     <br />
     <br />
-    <a href="https://github.com/sween/fhirmarshall_name/issues">Argue</a>
+    <a href="https://github.com/sween/fhirmarshall/issues">Argue</a>
     ·
-    <a href="https://github.com/sween/fhirmarshall_name/issues">Request SOMETHIN'</a>
+    <a href="https://github.com/sween/fhirmarshall/issues">Request SOMETHIN'</a>
   </p>
 </p>
 
