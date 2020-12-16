@@ -66,17 +66,16 @@
 </details>
 
 ## About  
-Various informations, arguments, implementation techniques, and fodder around the HL7 FHIR Standard  
+Various informations, arguments, implementation techniques, and fodder around the HL7 FHIR Standard and the hoopla around it.
 <!-- CONTACT -->
 
 ## Episodes  
-* [Benchmark FHIR Endpoints with Newman]()
-* []()
-* []()  
+* [Benchmark FHIR Endpoints with Newman](https://github.com/sween/fhirmarshall/tree/main/episodes/fhirmarshall_hello_newman)
+  
 
 ## Contact  
 
-[Ron Sweeney](https://www.ronsween.com) - hi@integrationrequired.com
+Portfolio: [Ron Sweeney](https://www.ronsween.com)
 
 Project Link: [https://github.com/sween/fhirmarshall](https://github.com/sween/fhirmarshall)
 
