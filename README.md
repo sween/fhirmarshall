@@ -38,7 +38,7 @@
     <img src="https://github.com/sween/fhirmarshall/raw/main/assets/fhir_marshall.png" alt="Logo">
   </a>
 
-  <h3 align="center">FHIR(`:tm:`) Marshall</h3>
+  <h3 align="center">FHIR® Marshall</h3>
 
   <p align="center">
     "LET ME SHOW YOU SOMETHIN'!"
