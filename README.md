@@ -29,7 +29,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/sween/fhirmarshall_hello_newman">
-    <img src="assets/fhirmarshall.png" alt="Logo">
+    <img src="https://github.com/sween/fhirmarshall_hello_newman/raw/main/assets/fhir_marshall.png" alt="Logo">
   </a>
 
   <h3 align="center">project_title</h3>
