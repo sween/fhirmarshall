@@ -73,20 +73,26 @@
 
 So given the STAR method on how to explain this effort, here it goes.  
 
-SITUATION:  
+### SITUATION    
 Production implementation of a FHIR® Resource Server, fronted with a robust API Manager for speed and profit.  
 
-TASK:
+### TASK  
 Considering the implementation required all types of optimizations for the Web Onion serving the requests, make sure the API doesnt go "Casters Up" for general use.  
 
-ACTION:
+### ACTION  
 Build out a repeatable process for checking your implementation work, pay attention to two parts:
 
 * Latency between the layer of the onion leading up to the durable persisted store, do they look comparable?  
 * An auto-scale group is in use, and some load balancing is going on.  Can we identify a breaking point where we throw 502's, more importantly, make sure we dont get any.
 
-RESULT:
-Wrote a Postman collection that can be run interactively for Infrastructure Engineers to tune the Web Onion and run the same thing in CI/CD pipelines.  Also put together a repo for some reason for other people to judge the technique and comment about my wardrobe on a stream.
+### RESULT  
+Wrote a Postman collection that can be run interactively for Infrastructure Engineers to tune the Web Onion and run the same thing in CI/CD pipelines.  Also put together a repo for some reason for other people to judge the technique and comment about my wardrobe on a stream.  
+
+<p align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="https://github.com/sween/fhirmarshall/raw/main/episodes/fhirmarshall_hello_newman/assets/fhir-aws-api-gateway.png" alt="Logo">
+  </a>
+</p>
 
 ### Features  
 
@@ -153,13 +159,18 @@ Also, if you want to turn up the heat a bit and start a tire FHIR on your system
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+I boiled the usage into a stream, but here are the highlights.
+
+### Create a Collection:
 
 
+### Run a Collection:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+
+### Run the same collection with Newman:
 
 
+### Donate to Games Outreach through our Campaign:
 
 
 
@@ -170,9 +181,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+## The Real Ron Sweeney
 
-* []()
-* []()
-* []()
+* [Portfolio](https://www.ronsween.com)
+* [LinkedIn]()
+* [Github]()
+* [GamersOutreach](https://www.ronsween.com/gamers.html)  
+
+
+
 
