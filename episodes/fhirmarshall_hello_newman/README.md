@@ -33,14 +33,11 @@
   <p align="center">
     Benchmarking FHIR® Resources with Newman
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Newman Docs »</strong></a>
+    <a href="https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/"><strong>Newman Docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/github_username/repo_name">View Stream</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </p>
 
@@ -74,21 +71,36 @@
 <!-- ABOUT THE PROJECT -->
 ## About Hello Newman
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+So given the STAR method on how to explain this effort, here it goes.  
+
+SITUATION:  
+Production implementation of a FHIR® Resource Server, fronted with a robust API Manager for speed and profit.  
+
+TASK:
+Considering the implementation required all types of optimizations for the Web Onion serving the requests, make sure the API doesnt go "Casters Up" for general use.  
+
+ACTION:
+Build out a repeatable process for checking your implementation work, pay attention to two parts:
+
+* Latency between the layer of the onion leading up to the durable persisted store, do they look comparable?  
+* An auto-scale group is in use, and some load balancing is going on.  Can we identify a breaking point where we throw 502's, more importantly, make sure we dont get any.
+
+RESULT:
+Wrote a Postman collection that can be run interactively for Infrastructure Engineers to tune the Web Onion and run the same thing in CI/CD pipelines.  Also put together a repo for some reason for other people to judge the technique and comment about my wardrobe on a stream.
 
 ### Features  
 
 * Prebaked Collection for use against `r4`. 
 * Lots of cool metrics and math to argue about.  
-* Helps dial in the performance of your API, and a possible integration layer in between. 
+* Helps dial in the performance of your API, and a possible integration layer of the onion in between. 
 
 ### Built With
 
-* [Newman]()
-* [Postman]()
-* [FHIR]()
-* [InterSystems IRIS]()
-* [Amazon Web Services]()
+* [Newman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/)
+* [Postman](https://learning.postman.com/)
+* [FHIR®](https://www.hl7.org/fhir/)
+* [InterSystems IRIS](https://www.intersystems.com/products/intersystems-iris-for-health/)
+* [Amazon Web Services](http://aws.amazon.com/)
 
 
 
@@ -121,11 +133,23 @@ Head out and grab Newman in your shell.
 If you just happen to have and endpoint out there and want to get use the collection in this repo, you can run this collection out of the box.
 
    ```sh
-   newman run 'hello_newman_fhir_f4_collection.json' -n 5 --verbose --env-var "x-api-key:1UgyzYouHaveBeenRickRolledX1gcqPrjA" --env-var "fhir-endpoint:
+   newman run 'hello_newman_fhir_f4_collection.json' -n 5 --verbose --env-var "x-api-key:1UgyzYouHaveBeenRickRolledX1gcqPrjA" --env-var "fhir-endpoint:https://1l17san3dk.execute-api.us-east-2.amazonaws.com/fhir"
    ```  
 
-_If your endpoint is not secured, the apikey var will be ignored, but it is required._
+_If your endpoint is not secured, the apikey var will be ignored anyway and you dont need it._
 
+Also, if you want to turn up the heat a bit and start a tire FHIR on your system, you can spawn some processes and call them "USERS" like this and multiply things with your newman iterator.
+
+   ```sh
+    NUMUSERS=5
+    set -m # Enable Job Control
+
+    # Hello Newman.
+    for i in `seq $NUMUSERS`; do
+      newman run 'hello_newman_fhir_f4_collection.json' -n 5 --verbose --env-var "x-api-key:1UgyzYouHaveBeenRickRolledX1gcqPrjA" --env-var "fhir-endpoint:https://1l17san3dk.execute-api.us-east-2.amazonaws.com/fhir"
+    done
+    while [ 1 ]; do fg 2> /dev/null; [ $? == 1 ] && break; done
+   ```
 <!-- USAGE EXAMPLES -->
 ## Usage
 
