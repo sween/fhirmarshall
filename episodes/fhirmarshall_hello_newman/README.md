@@ -25,7 +25,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/sween/fhirmarshall/raw/main/episodes/fhirmarshall_hello_newman/assets/newman.jpg" alt="Logo" width="300" height="300">
+    <img src="https://github.com/sween/fhirmarshall/raw/main/episodes/fhirmarshall_hello_newman/assets/Newmanfire.gif" alt="Logo">
   </a>
 
   <h3 align="center">Hello Newman.</h3>
@@ -33,7 +33,7 @@
   <p align="center">
     Benchmarking FHIR® Resources with Newman
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/github_username/repo_name"><strong>Newman Docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
@@ -121,7 +121,7 @@ Head out and grab Newman in your shell.
 If you just happen to have and endpoint out there and want to get use the collection in this repo, you can run this collection out of the box.
 
    ```sh
-   newman run fhir_test_portal_postman.json  --env-var "api=1111" --env-var "apikey:4444"
+   newman run 'hello_newman_fhir_f4_collection.json' -n 5 --verbose --env-var "x-api-key:1UgyzYouHaveBeenRickRolledX1gcqPrjA" --env-var "fhir-endpoint:
    ```  
 
 _If your endpoint is not secured, the apikey var will be ignored, but it is required._

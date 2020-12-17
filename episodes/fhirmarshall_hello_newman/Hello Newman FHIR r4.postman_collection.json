@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "81a5f2b4-c928-4414-9824-a020de41f862",
+		"name": "Hello Newman FHIR r4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Base",
+			"item": [
+				{
+					"name": "Get Metadata",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1328097f-aa21-4e38-91b3-55b55167385a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir-endpoint}}/metadata",
+							"host": [
+								"{{fhir-endpoint}}"
+							],
+							"path": [
+								"metadata"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "Create Patient",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "71e6a9a9-9fcd-408d-8cf3-97f7e01f6a80",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Patient\",\n  \"id\": \"pat3\",\n  \"text\": {\n    \"status\": \"generated\",\n    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">\\n      \\n      <p>Patient Simon Notsowell @ Acme Healthcare, Inc. MR = 123457, DECEASED</p>\\n    \\n    </div>\"\n  },\n  \"identifier\": [\n    {\n      \"use\": \"usual\",\n      \"type\": {\n        \"coding\": [\n          {\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n            \"code\": \"MR\"\n          }\n        ]\n      },\n      \"system\": \"urn:oid:0.1.2.3.4.5.6.7\",\n      \"value\": \"123457\"\n    }\n  ],\n  \"active\": true,\n  \"name\": [\n    {\n      \"use\": \"official\",\n      \"family\": \"{{$randomLastName}}\",\n      \"given\": [\n        \"{{$randomFirstName}}\"\n      ]\n    }\n  ],\n  \"gender\": \"male\",\n  \"birthDate\": \"1982-01-23\",\n  \"deceasedDateTime\": \"2015-02-14T13:42:00+10:00\",\n  \"managingOrganization\": {\n    \"reference\": \"Organization/1\",\n    \"display\": \"ACME Healthcare, Inc\"\n  },\n  \"meta\": {\n    \"tag\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActReason\",\n        \"code\": \"HTEST\",\n        \"display\": \"test health data\"\n      }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{fhir-endpoint}}/Patient",
+							"host": [
+								"{{fhir-endpoint}}"
+							],
+							"path": [
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Patient Resources",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a897ab8f-f239-4718-a36e-5fe056bc273d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{fhir-endpoint}}/Patient",
+							"host": [
+								"{{fhir-endpoint}}"
+							],
+							"path": [
+								"Patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Patient 1 $everything",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c0397a7-51b4-45bf-8280-19f98ca9258c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{fhir-endpoint}}/Patient/4/$everything",
+							"host": [
+								"{{fhir-endpoint}}"
+							],
+							"path": [
+								"Patient",
+								"4",
+								"$everything"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Post Fhir Appointment Patient/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d37c7d8f-200b-4a82-9159-cb083e1b152d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json+fhir",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Appointment\",\n  \"text\": {\n    \"status\": \"generated\",\n    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Brian MRI results discussion</div>\"\n  },\n  \"status\": \"booked\",\n  \"serviceCategory\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://example.org/service-category\",\n          \"code\": \"gp\",\n          \"display\": \"General Practice\"\n        }\n      ]\n    }\n  ],\n  \"serviceType\": [\n    {\n      \"coding\": [\n        {\n          \"code\": \"52\",\n          \"display\": \"General Discussion\"\n        }\n      ]\n    }\n  ],\n  \"specialty\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"394814009\",\n          \"display\": \"General practice\"\n        }\n      ]\n    }\n  ],\n  \"appointmentType\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0276\",\n        \"code\": \"FOLLOWUP\",\n        \"display\": \"A follow up visit from a previous appointment\"\n      }\n    ]\n  },\n  \"reasonReference\": [\n    {\n      \"reference\": \"Condition/example\",\n      \"display\": \"Severe burn of left ear\"\n    }\n  ],\n  \"priority\": 5,\n  \"description\": \"Discussion on the results of your recent MRI\",\n  \"start\": \"2013-12-10T09:00:00Z\",\n  \"end\": \"2013-12-10T11:00:00Z\",\n  \"created\": \"2013-10-10\",\n  \"comment\": \"Further expand on the results of the MRI and determine the next actions that may be appropriate.\",\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/myringotomy\"\n    }\n  ],\n  \"participant\": [\n    {\n      \"actor\": {\n        \"reference\": \"Patient/1\",\n        \"display\": \"O'Hara248 Carroll471\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    },\n    {\n      \"type\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\n              \"code\": \"ATND\"\n            }\n          ]\n        }\n      ],\n      \"actor\": {\n        \"reference\": \"Practitioner/example\",\n        \"display\": \"Dr Adam Careful\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    },\n    {\n      \"actor\": {\n        \"reference\": \"Location/1\",\n        \"display\": \"South Wing, second floor\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{fhir-endpoint}}/Appointment",
+							"host": [
+								"{{fhir-endpoint}}"
+							],
+							"path": [
+								"Appointment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fhir Appointment Patient/1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{fhir-endpoint}}/Appointment?actor=Patient/1",
+							"host": [
+								"{{fhir-endpoint}}"
+							],
+							"path": [
+								"Appointment"
+							],
+							"query": [
+								{
+									"key": "actor",
+									"value": "Patient/1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Fhir Appointment Patient/1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json+fhir",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Appointment\",\n  \"id\": \"1983\",\n  \"text\": {\n    \"status\": \"generated\",\n    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Brian MRI results discussion</div>\"\n  },\n  \"status\": \"booked\",\n  \"serviceCategory\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://example.org/service-category\",\n          \"code\": \"gp\",\n          \"display\": \"General Practice\"\n        }\n      ]\n    }\n  ],\n  \"serviceType\": [\n    {\n      \"coding\": [\n        {\n          \"code\": \"52\",\n          \"display\": \"General Discussion\"\n        }\n      ]\n    }\n  ],\n  \"specialty\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://snomed.info/sct\",\n          \"code\": \"394814009\",\n          \"display\": \"General practice\"\n        }\n      ]\n    }\n  ],\n  \"appointmentType\": {\n    \"coding\": [\n      {\n        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0276\",\n        \"code\": \"FOLLOWUP\",\n        \"display\": \"A follow up visit from a previous appointment\"\n      }\n    ]\n  },\n  \"reasonReference\": [\n    {\n      \"reference\": \"Condition/example\",\n      \"display\": \"Severe burn of left ear\"\n    }\n  ],\n  \"priority\": 5,\n  \"description\": \"Discussion on the results of your recent MRI\",\n  \"start\": \"2013-11-10T09:00:00Z\",\n  \"end\": \"2013-11-10T11:00:00Z\",\n  \"created\": \"2013-10-10\",\n  \"comment\": \"No comment\",\n  \"basedOn\": [\n    {\n      \"reference\": \"ServiceRequest/myringotomy\"\n    }\n  ],\n  \"participant\": [\n    {\n      \"actor\": {\n        \"reference\": \"Patient/1\",\n        \"display\": \"O'Hara248 Carroll471\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    },\n    {\n      \"type\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\n              \"code\": \"ATND\"\n            }\n          ]\n        }\n      ],\n      \"actor\": {\n        \"reference\": \"Practitioner/example\",\n        \"display\": \"Dr Adam Careful\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    },\n    {\n      \"actor\": {\n        \"reference\": \"Location/1\",\n        \"display\": \"South Wing, second floor\"\n      },\n      \"required\": \"required\",\n      \"status\": \"accepted\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{fhir-endpoint}}/Appointment/1983",
+							"host": [
+								"{{fhir-endpoint}}"
+							],
+							"path": [
+								"Appointment",
+								"1983"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Observation",
+			"item": [
+				{
+					"name": "Post Observation Patient/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "86ee3d19-2325-46e9-8b92-f448655bad74",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json+fhir",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n        \"resourceType\": \"Observation\",\n\n        \"status\": \"final\",\n        \"category\": [\n          {\n            \"coding\": [\n              {\n                \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n                \"code\": \"laboratory\",\n                \"display\": \"laboratory\"\n              }\n            ]\n          }\n        ],\n        \"code\": {\n          \"coding\": [\n            {\n              \"system\": \"http://loinc.org\",\n              \"code\": \"718-7\",\n              \"display\": \"Hemoglobin [Mass/volume] in Blood\"\n            }\n          ],\n          \"text\": \"Hemoglobin [Mass/volume] in Blood\"\n        },\n        \"subject\": {\n          \"reference\": \"Patient/1\"\n        },\n        \"effectiveDateTime\": \"2014-01-24T15:32:17+00:00\",\n        \"issued\": \"2014-01-24T15:32:17.188+00:00\",\n        \"valueQuantity\": {\n          \"value\": 10.277,\n          \"unit\": \"g/dL\",\n          \"system\": \"http://unitsofmeasure.org\",\n          \"code\": \"g/dL\"\n        }\n\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fhir-endpoint}}/Observation",
+							"host": [
+								"{{fhir-endpoint}}"
+							],
+							"path": [
+								"Observation"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "1UgyzE9zFC6HcurzNRviw46pfGHkEYhX1gcqPrjA",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "430b24a1-e073-45f6-94a6-e8cbeeffae4d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f52bb40d-750d-421d-8fd9-28cace85d6d4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "76615cbe-fe5a-48b5-8a1d-328c1a5fa319",
+			"key": "fhir-endpoint",
+			"value": "https://wtq5el184h.execute-api.us-east-2.amazonaws.com/fhir"
+		},
+		{
+			"id": "55608b30-fef9-4f1a-98b9-ecb860735145",
+			"key": "x-api-key",
+			"value": "1UgyzE9zFC6HcurzNRviw46pfGHkEYhX1gcqPrjA"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
