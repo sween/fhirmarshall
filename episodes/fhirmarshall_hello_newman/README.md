@@ -25,18 +25,18 @@
 <br />
 <p align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/sween/fhirmarshall/raw/main/episodes/fhirmarshall_hello_newman/assets/Newmanfire.gif" alt="Logo">
+    <img src="https://github.com/sween/fhirmarshall/raw/main/episodes/fhirmarshall_hello_newman/assets/hello_newman.png" alt="Logo">
   </a>
 
   <h3 align="center">Hello Newman.</h3>
 
   <p align="center">
-    Benchmarking FHIR® Resources with Newman
+    Stokin FHIR® Resources with Newman
     <br />
     <a href="https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/"><strong>Newman Docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Stream</a>
+    <a href="https://youtu.be/-Am6Jx6m5oI">View Stream</a>
     ·
   </p>
 </p>
@@ -184,8 +184,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## The Real Ron Sweeney
 
 * [Portfolio](https://www.ronsween.com)
-* [LinkedIn]()
-* [Github]()
+* [LinkedIn](https://linkedin.com/in/ronsweeney)
+* [Github](https://www.github.com/sween)
 * [GamersOutreach](https://www.ronsween.com/gamers.html)  
 
 

@@ -80,17 +80,12 @@ Portfolio: [Ron Sweeney](https://www.ronsween.com)
 Project Link: [https://github.com/sween/fhirmarshall](https://github.com/sween/fhirmarshall)
 
 
-
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
-
-
-
-
+* [FHIR®](https://www.hl7.org/fhir/)
+* [InterSystems IRIS](https://www.intersystems.com/products/intersystems-iris-for-health/)
+* [Amazon Web Services](http://aws.amazon.com/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
